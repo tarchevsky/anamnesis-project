@@ -1,0 +1,17 @@
+extends layouts/default
+
+block variables
+    - const title = 'Нейропсихологический квиз | Квиз - анамнез для нейропсихолога'
+    - const description = 'Этот нейропсихологический квиз нужен, чтобы проанализировать особенности развития ребёнка от момента беременности мамы до текущего времени.'
+    - const keywords = 'нейропсихолог, диагностика, исследование, развитие ребенка, квиз нейропсихолога'
+
+block header
+
+block content
+    include ../blocks/modules/quiz/quiz
+
+block footer
+
+block scripts
+    script(src='js/vendor.js')
+    script(src='js/main.js')

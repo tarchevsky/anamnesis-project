@@ -1,0 +1,227 @@
+.quiz {
+  .submit {
+    align-self: flex-start;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    height: 100vh;
+    transition: margin 0.5s ease-out;
+    gap: 20px 0;
+
+    &.hidden {
+      margin-block-start: -100vh;
+      transition: margin 0.5s ease-out;
+    }
+
+    .row {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0 20px;
+    }
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    justify-items: flex-end;
+    gap: 0 20px;
+    width: 100%;
+
+    &__annotation {
+      justify-self: start;
+    }
+
+    &__elem {
+      display: grid;
+      grid-template-columns: 1fr minmax(270px, 1fr);
+      align-items: center;
+      gap: 0 20px;
+
+      input[type='checkbox'], input[type='radio'] {
+        align-self: center;
+        border: 1px solid $disabled;
+      }
+
+      &--num {
+        grid-template-columns: auto minmax(150px, 1fr);
+      }
+    }
+
+    &--withoutannotation {
+      justify-items: flex-start;
+
+      .quiz-grid__elem {
+        justify-items: start;
+      }
+    }
+  }
+
+  &-intro {
+    grid-template-columns: 1fr auto;
+    gap: 0 50px;
+  }
+
+  &-heading {
+    font-size: 40px;
+  }
+
+  &-whoiam {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+
+    &__avatar {
+      position: relative;
+      width: 300px;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -6px;
+        left: -17px;
+        width: 340px;
+        height: 340px;
+        border-radius: 100%;
+        background: $disabled;
+      }
+
+      img {
+        position: relative;
+        border-radius: 100%;
+      }
+    }
+
+    &__descr {
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+
+  form {
+    input, select, textarea {
+      border: none;
+      border-bottom: 1px solid $disabled;
+    }
+  }
+}
+
+.input {
+  &-result {
+    z-index: -1;
+    margin-top: -40px;
+    padding: 0;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+  }
+}
+
+.parents {
+  &-names {
+    width: 100%;
+  }
+}
+
+.navigation {
+  display: grid;
+  grid-template-columns: [prev] auto [next] 1fr;
+
+  .submit {
+    background: $lightgreen;
+    transition: color $transition;
+  }
+
+  &__prev {
+    grid-column: prev;
+    padding: 0 10px;
+  }
+
+  &__next {
+    grid-column: next;
+    padding: 0 10px;
+  }
+
+  &__next, &__prev {
+    display: flex;
+    margin-block: 20px;
+
+    & > a, .submit {
+      display: inline;
+      width: auto;
+      padding: 15px 20px;
+      background-color: $accent-color;
+      border-radius: 15px;
+      border-bottom: 0;
+      margin-block: 0;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .quiz {
+    h1 {
+      margin-block: 10px;
+    }
+
+    &__item {
+      justify-content: flex-start;
+      gap: 10px;
+    }
+
+    p {
+      margin-block: 10px;
+    }
+
+    &-intro {
+      grid-template-columns: 1fr;
+      gap: 20px 0;
+    }
+
+    &-whoiam {
+      display: grid;
+      align-items: center;
+      grid-template-columns: auto 1fr;
+      width: auto;
+      gap: 0;
+
+      &__avatar {
+        display: block;
+        border-radius: 100%;
+        width: 150px;
+
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 13px;
+          left: -3px;
+          width: 130px;
+          height: 130px;
+          border-radius: 100%;
+          background: $disabled;
+        }
+
+        img {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      &__descr {
+        text-align: start;
+        font-size: 10px;
+      }
+    }
+
+    &-heading {
+      font-size: 20px;
+    }
+  }
+}

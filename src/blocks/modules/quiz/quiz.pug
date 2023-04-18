@@ -1,0 +1,703 @@
+.quiz
+    form#form.form(action='#' method='POST')
+        .quiz__item
+            .quiz-intro.row
+                .quiz-intro__col
+                    h1.quiz-heading Начало приёма
+                    p Здравствуйте, вам предстоит заполнить квиз.
+                    p Это займет примерно 20-30 минут.
+                    p Важной может показаться каждая деталь. Но если что-то не удается вспомнить, укажите, пожалуйста, это в комментарии или  оставьте поля пустыми.
+                    p Спасибо
+                .quiz-whoiam
+                    .quiz-whoiam__avatar
+                        img(src='../img/mary.png' alt='Мария, нейропсихолог и клинический психолог')
+                    p.quiz-whoiam__descr Рахмани-Тарчевская Мария<br>Нейропсихолог, клинический психолог, <br>автор игр и пособий по детской нейроспихологии<br>МГУ имени М.В. Ломоносова
+            .navigation
+                .navigation__next
+                    a(href='#') Пройти квиз
+        .quiz__item
+            h1 Начало
+            include ../agreement/agreement
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+        .quiz__item
+            h1 Знакомство. Вопросы. Часть 1
+            .row
+                .quiz-grid.quiz-grid--withoutannotation
+                    .quiz-grid__elem
+                        label.childs-code-label(for='childs-code') Код
+                        input.childs-code(type='text' name='childs-code' placeholder='')
+            div
+                label.family-composition__label(for='family-composition') Состав семьи?
+                input.family-composition(name='family-composition' placeholder='Состав семьи')
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+        .quiz__item
+            h1 Знакомство. Вопросы. Часть 2
+            .row
+                label.complaints__label(for='complaints') Жалобы
+                textarea.complaints(name='complaints' placeholder='Расскажите подробнее' rows='3')
+            p.quiz-grid__annotation Социальная среда, в которой находится ребенок
+            .row
+                .quiz-grid
+                    .quiz-grid__elem
+                        input.checkbox.environment-school(type='checkbox' name='environment-school' value='Школа')
+                        label.environment-school__label(for='environment-school') Школа
+                    .quiz-grid__elem
+                        input.checkbox.environment-kindergarten(type='checkbox' name='environment-kindergarten' value='Детский сад')
+                        label.environment-kindergarten__label(for='environment-kindergarten') Детский сад
+                    .quiz-grid__elem
+                        input.checkbox.environment-home(type='checkbox' name='environment-home' value='Дом')
+                        label.environment-home__label(for='environment-home') Дом
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+        .quiz__item
+            h1 Течение беременности. Основные моменты. Часть 1
+            p В процессе заполнения можно выбирать несколько вариантов ответа, а можно пропускать графы.
+            p На момент беременности возраст:
+            .row
+                .mom
+                    input.mom-age(type='text' name='mom-age' placeholder='Мамы')
+                .dad
+                    input.dad-age(type='text' name='dad-age' placeholder='Отца')
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+        .quiz__item
+            h1 Течение беременности. Основные моменты. Часть 2
+            .row
+                .quiz-grid
+                    p Имело место лечение по поводу бесплодия
+                    .quiz-grid__elem
+                        input.checkbox.infertility(type='radio' name='infertility' value='Да')
+                        label.infertility__label(for='infertility') Да
+                    .quiz-grid__elem
+                        input.checkbox.infertility(type='radio' name='infertility' value='Нет')
+                        label.infertility__label(for='infertility') Нет
+            .row
+                .quiz-grid
+                    p.quiz-grid__annotation Замершая беременность
+                    .quiz-grid__elem
+                        input.checkbox.failed-pregnancy(type='radio' name='failed-pregnancy' value='Да')
+                        label.failed-pregnancy__label(for='failed-pregnancy') Да
+                    .quiz-grid__elem
+                        input.checkbox.failed-pregnancy(type='radio' name='failed-pregnancy' value='Нет')
+                        label.failed-pregnancy__label(for='failed-pregnancy') Нет
+            .row
+                .quiz-grid
+                    p Угроза прерывания беременности (не отмечайте, если не было)
+                    .quiz-grid__elem
+                        input.checkbox.threatened-abortion(type='radio' name='threatened-abortion' value='Да')
+                        label.threatened-abortionlabel(for='threatened-abortion') Да
+                    .quiz-grid__elem
+                        input.checkbox.threatened-abortion(type='radio' name='threatened-abortion' value='Нет')
+                        label.threatened-abortion-label(for='threatened-abortion') Нет
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+        .quiz__item
+            h1 Течение беременности. I половина
+            .row
+                .quiz-grid.quiz-grid--withoutannotation
+                    .quiz-grid__elem
+                        input.checkbox.part-one-toxicosis(type='checkbox' name='part-one-toxicosis' value='Токсикоз')
+                        label.part-one-toxicosis__label(for='part-one-toxicosis') Токсикоз
+                    .quiz-grid__elem
+                        input.checkbox.part-one-bleeding(type='checkbox' name='part-one-bleeding' value='Кровотечение')
+                        label.part-one-bleeding__label(for='part-one-bleeding') Кровотечение
+                    .quiz-grid__elem
+                        input.checkbox.part-one-past-infections(type='checkbox' name='part-one-past-infections' value='Перенесенные инфекции')
+                        label.part-one-past-infections__label(for='part-one-past-infections') Перенесенные инфекции
+                    .quiz-grid__elem
+                        input.checkbox.part-one-anemia(type='checkbox' name='part-one-anemia' value='Анемия')
+                        label.part-one-anemia__label(for='part-one-anemia') Анемия
+                    .quiz-grid__elem
+                        input.checkbox.part-one-ari-gripp(type='checkbox' name='part-one-ari-gripp' value='ОРЗ, ГРИПП')
+                        label.part-one-ari-gripp__label(for='part-one-ari-gripp') ОРЗ, ГРИПП
+                    .quiz-grid__elem
+                        input.checkbox.part-one-nothing(type='checkbox' name='part-one-nothing' value='Ничего из перечисленного')
+                        label.part-one-nothing__label(for='part-one-nothing') Ничего из перечисленного
+            input.part-one-other(type='text' name='part-one-other' placeholder='Другое')
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+        .quiz__item
+            h1 Течение беременности. II половина. Часть 1
+            .row
+                .quiz-grid.quiz-grid--withoutannotation
+                    .quiz-grid__elem
+                        input.checkbox.part-two-toxicosis(type='checkbox' name='part-two-toxicosis' value='Токсикоз')
+                        label.part-two-toxicosis__label(for='part-two-toxicosis') Токсикоз
+                    .quiz-grid__elem
+                        input.checkbox.part-two-anemia(type='checkbox' name='part-two-anemia' value='Анемия')
+                        label.part-two-anemia__label(for='part-two-anemia') Анемия
+                    .quiz-grid__elem
+                        input.checkbox.part-two-nephropathy(type='checkbox' name='part-two-nephropathy' value='Нефропатия')
+                        label.part-two-nephropathy__label(for='part-two-nephropathy') Нефропатия
+                    .quiz-grid__elem
+                        input.checkbox.part-two-rapid-weight-gain(type='checkbox' name='part-two-rapid-weight-gain' value='Быстрый набор веса')
+                        label.part-two-rapid-weight-gain__label(for='part-two-rapid-weight-gain') Быстрый набор веса
+                    .quiz-grid__elem
+                        input.checkbox.part-two-low-blood-pressure(type='checkbox' name='part-two-low-blood-pressure' value='Понижение артериального давления')
+                        label.part-two-low-blood-pressure__label(for='part-two-low-blood-pressure') Понижение артериального давления
+                    .quiz-grid__elem
+                        input.checkbox.part-two-high-blood-pressure(type='checkbox' name='part-two-high-blood-pressure' value='Повышение артериального давления')
+                        label.part-two-high-blood-pressure__label(for='part-two-high-blood-pressure') Повышение артериального давления
+                    .quiz-grid__elem
+                        input.checkbox.part-two-nothing(type='checkbox' name='part-two-nothing' value='Ничего из перечисленного')
+                        label.part-two-nothing__label(for='part-two-nothing') Ничего из перечисленного
+            .row
+                div
+                    label.part-two-aggravation__label(for='part-two-aggravation') Обострение хронических заболеваний <br>(оставьте пустым, если не было)
+                    textarea.part-two-aggravation(name='part-two-aggravation' placeholder='опишите' rows='3')
+                div
+                    label.part-two-psychotraumatic-situations__label(for='part-two-psychotraumatic-situations') Психотравмирующие ситуации <br>(оставьте пустым, если не было)
+                    textarea.part-two-psychotraumatic-situations(name='part-two-psychotraumatic-situations' placeholder='опишите' rows='3')
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+
+        .quiz__item
+            h1 Течение беременности. II половина. Часть 2
+            .row
+                .quiz-grid
+                    p.quiz-grid__annotation Психологическое состояние на момент беременности
+                    .quiz-grid__elem
+                        input.checkbox.part-two-irritability(type='checkbox' name='part-two-irritability' value='раздражительность')
+                        label.part-two-irritability__label(for='part-two-irritability') раздражительность
+                    .quiz-grid__elem
+                        input.checkbox.part-two-tearfulness(type='checkbox' name='part-two-tearfulness' value='плаксивость')
+                        label.part-two-tearfulness__label(for='part-two-tearfulness') плаксивость
+                    .quiz-grid__elem
+                        input.checkbox.part-two-tired(type='checkbox' name='part-two-tired' value='постоянное-чувство-усталости')
+                        label.part-two-tired__label(for='part-two-tired') постоянное чувство усталости
+                    .quiz-grid__elem
+                        input.checkbox.part-two-aggression(type='checkbox' name='part-two-aggression' value="агрессия")
+                        label.part-two-aggression__label(for='part-two-aggression') агрессия
+            input.part-two-other(type='text' name='part-two-other' placeholder='Другое')
+            .row
+                .quiz-grid
+                    p.quiz-grid__annotation Ожидаемый пол ребёнка:
+                    .quiz-grid__elem
+                        input.checkbox.part-two-sex-boy(type='checkbox' name='part-two-sex-boy' value='мальчик')
+                        label.part-two-sex-boy__label(for='part-two-sex-boy') мальчик
+                    .quiz-grid__elem
+                        input.checkbox.part-two-sex-girl(type='checkbox' name='part-two-sex-girl' value='девочка')
+                        label.part-two-sex-girl__label(for='part-two-sex-girl') девочка
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+        .quiz__item
+            h1 Родовая деятельность. Часть 1
+            .row
+                label.timing-age__label(for='timing-age') Роды наступили на сроке
+                input.timing-age(type='text' name='timing-age' placeholder='срок')
+            p.quiz-grid__annotation Роды:
+            .row
+                .quiz-grid
+                    .quiz-grid__elem
+                        input.checkbox.birth-independent(type='checkbox' name='birth-independent' value="самостоятельные")
+                        label.birth-independent__label(for='birth-independent') самостоятельные
+                    .quiz-grid__elem
+                        input.checkbox.birth-retrieved(type='checkbox' name='birth-retrieved' value="вызваны")
+                        label.birth-retrieved__label(for='birth-retrieved') вызваны
+                    .quiz-grid__elem
+                        input.checkbox.birth-caesar.input-condition(type='checkbox' name='birth-сaesar' value="оперативные (кесарево сечение):")
+                        label.birth-caesar__label(for='birth-сaesar') оперативные (кесарево сечение):
+            //p.quiz-grid__annotation оперативные (кесарево сечение):
+            .row.quiz-grid--withoutannotation.input-result
+                .quiz-grid__elem
+                    input.checkbox.birth(type='radio' name='birth' value="плановое")
+                    label.birth-planned__label(for='birth') плановое
+                .quiz-grid__elem
+                    input.checkbox.birth(type='radio' name='birth' value="вынужденное")
+                    label.birth__label(for='birth') вынужденное
+                .quiz-grid__elem
+                    input.checkbox.birth.input-condition(type='radio' name='birth' value="экстренное")
+                    label.birth-emergency__label(for='birth') экстренное
+            input.birth-reason.input-result(type='text' name='birth-reason' placeholder='по причине')
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+
+        .quiz__item
+            h1 Родовая деятельность. Часть 2
+            p.quiz-grid__annotation Родовспоможение:
+            .row
+                .quiz-grid.quiz-grid--withoutannotation
+                    .quiz-grid__elem
+                        input.checkbox.birth-attendance-stimulation(type='checkbox' name='birth-attendance-stimulation' value="стимуляция")
+                        label.birth-attendance-stimulation__label(for='birth-attendance-stimulation') стимуляция
+                    .quiz-grid__elem
+                        input.checkbox.birth-attendance-mechanically(type='checkbox' name='birth-attendance-mechanically' value="механическое-выдавливание-плода")
+                        label.birth-attendance-mechanically__label(for='birth-attendance-mechanically') механическое выдавливание плода
+                    .quiz-grid__elem
+                        input.checkbox.birth-attendance-pliers(type='checkbox' name='birth-attendance-pliers' value="щипцы")
+                        label.birth-attendance-pliers__label(for='birth-attendance-pliers') щипцы
+            input.birth-attendance-readmore(name='birth-attendance-readmore' placeholder='другое')
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+
+        .quiz__item
+            h1 Родовая деятельность. Часть 3
+            .row
+                .quiz-grid
+                    p.quiz-grid__annotation Анестезия:
+                    .quiz-grid__elem
+                        input.checkbox.anesthesia-local-general(type='radio' name='anesthesia-local-general' value='местная')
+                        label.anesthesia-local-general__label(for='anesthesia-local-general') местная
+                    .quiz-grid__elem
+                        input.checkbox.anesthesia-local-general(type='radio' name='anesthesia-local-general' value='Общая')
+                        label.anesthesia-local-general__label(for='anesthesia-local-general') общая
+            label.anesthesia-readmore__label(for='anesthesia-readmore') Рассказать подробнее
+            textarea.anesthesia-readmore(name='anesthesia-readmore' placeholder='опишите' rows='3')
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+
+        .quiz__item
+            h1 При рождении. Часть 1
+            .row
+                .quiz-grid
+                    p.quiz-grid__annotation Ребенок закричал:
+                    .quiz-grid__elem
+                        input.checkbox.screamed-at-once(type='checkbox' name='screamed-at-once' value="сразу")
+                        label.screamed-at-once__label(for='screamed-at-once') сразу
+                    .quiz-grid__elem
+                        input.checkbox.screamed-after-suction(type='checkbox' name='screamed-after-suction' value="после-отсасывания-слизи")
+                        label.screamed-after-suction__label(for='screamed-after-suction') после отсасывания слизи
+                    .quiz-grid__elem
+                        input.checkbox.screamed-patting(type='checkbox' name='screamed-patting' value="после-похлопывания")
+                        label.screamed-patting__label(for='screamed-patting') после похлопывания
+                    .quiz-grid__elem
+                        input.checkbox.screamed-resuscitation.input-condition(type='checkbox' name='screamed-resuscitation' value="проводилась-реанимация")
+                        label.screamed-resuscitation__label(for='screamed-resuscitation') проводилась реанимация
+            input.screamed-readmore.input-result(type='text' name='screamed-readmore' placeholder='подробнее')
+            .row
+                .quiz-grid
+                    p.quiz-grid__annotation Предлежание:
+                    .quiz-grid__elem
+                        input.checkbox.breech(type='radio' name='breech' value='головное')
+                        label.breech__label(for='breech') головное
+                    .quiz-grid__elem
+                        input.checkbox.breech(type='radio' name='breech' value='ягодичное')
+                        label.breech__label(for='breech') ягодичное
+                    .quiz-grid__elem
+                        input.checkbox.breech(type='radio' name='breech' value='ножное')
+                        label.breech__label(for='breech') ножное
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+
+        .quiz__item
+            h1 При рождении. Часть 2
+            .row
+                div
+                    label.growth__label(for='growth') Рост
+                    input.growth(type='text' name='growth' placeholder='рост')
+                div
+                    label.weight__label(for='weight') Вес
+                    input.weight(type='text' name='weight' placeholder='вес')
+                div
+                    label.apgar__label(for='apgar') Оценка по шкале Апгар
+                    input.apgar(type='text' name='apgar' placeholder='оценка')
+            .row
+                div
+                    label.feeding__label(for='feeding') Первое кормление наступило на
+                    input.feeding(type='text' name='feeding' placeholder='сутки')
+            p.quiz-grid__annotation Грудь взял:
+            .row
+                .quiz-grid.quiz-grid--withoutannotation
+                    .quiz-grid__elem
+                        input.checkbox.took-how-actively(type='checkbox' name='how-actively' value='активно')
+                        label.took-how-actively__label(for='how-actively') активно
+                    .quiz-grid__elem
+                        input.checkbox.took-how-sluggishly(type='checkbox' name='how-sluggishly' value='вяло')
+                        label.took-how-sluggishly__label(for='how-sluggishly') вяло
+                    .quiz-grid__elem
+                        input.checkbox.took-how-refused(type='checkbox' name='how-refused' value='отказался')
+                        label.took-how-refused__label(for='how-refused') отказался
+
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+
+        .quiz__item
+            h1 При рождении. Часть 3
+            .row
+                .quiz-grid
+                    p.quiz-grid__annotation Имело место:
+                    .quiz-grid__elem
+                        input.checkbox.birth-two-waters(type='checkbox' name='waters' value="зеленые-околоплодные-воды")
+                        label.birth-two-waters__label(for='waters') зеленые околоплодные воды
+                    .quiz-grid__elem
+                        input.checkbox.birth-two-prosecution(type='checkbox' name='prosecution' value="обвитие-пуповины-вокруг-шеи-или-туловища")
+                        label.birth-two-prosecution__label(for='prosecution') обвитие пуповины вокруг шеи или туловища
+                    .quiz-grid__elem
+                        input.checkbox.birth-two-hypoxia(type='checkbox' name='hypoxia' value="гипоксия")
+                        label.birth-two-hypoxia__label(for='hypoxia') гипоксия
+                    .quiz-grid__elem
+                        input.checkbox.birth-two-fetus(type='checkbox' name='fetus' value="крупный-плод")
+                        label.birth-two-fetus__label(for='fetus') крупный плод
+                    .quiz-grid__elem
+                        input.checkbox.birth-two-umbilical-cord(type='checkbox' name='umbilical-cord' value="короткая-пуповина")
+                        label.birth-two-umbilical-cord__label(for='umbilical-cord') короткая пуповина
+                    .quiz-grid__elem
+                        input.checkbox.birth-two-infection(type='checkbox' name='infection' value="внутриутробная-инфекция")
+                        label.birth-two-infection__label(for='infection') внутриутробная инфекция
+                    .quiz-grid__elem
+                        input.checkbox.birth-two-delay(type='checkbox' name='delay' value="внутриутробная-задержка-развития-(ВУЗР)")
+                        label.birth-two-delay__label(for='delay') внутриутробная задержка развития (ВУЗР)
+                    .quiz-grid__elem
+                        input.checkbox.birth-two-asphyxiation(type='checkbox' name='asphyxiation' value="асфиксия")
+                        label.birth-two-asphyxiation__label(for='asphyxiation') асфиксия
+                    .quiz-grid__elem
+                        input.checkbox.birth-two-nothing(type='checkbox' name='nothing' value="Ничего из перечисленного")
+                        label.birth-two-nothing__label(for='nothing') Ничего из перечисленного
+            input.birth-readmore(type='text' name='birth-readmore' placeholder='подробнее')
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+
+        .quiz__item
+            h1 При рождении. Часть 4
+            label.birth-two-conclusion__label(for='conclusion') Заключение после стационара
+            textarea.birth-two-conclusion(name='conclusion' placeholder='опишите' rows='3')
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+
+        .quiz__item
+            h1 Развитие ребенка до года
+            .row
+                .quiz-grid
+                    p.quiz-grid__annotation <strong>Наблюдалось:</strong>
+                    .quiz-grid__elem
+                        input.checkbox.uptoayear-restlessness(type='checkbox' name='restlessness' value="двигательное-беспокойство")
+                        label.uptoayear-restlessness__label(for='restlessness') двигательное беспокойство
+                    .quiz-grid__elem
+                        input.checkbox.uptoayear-triangle(type='checkbox' name='triangle' value="синел/бледнел-носогубный-треугольник")
+                        label.uptoayear-triangle__label(for='triangle') синел/бледнел носогубный треугольник
+                    .quiz-grid__elem
+                        input.checkbox.uptoayear-hand-tremor(type='checkbox' name='hand-tremor' value="тремор-ручек")
+                        label.uptoayear-hand-tremor__label(for='hand-tremor') тремор ручек
+                    .quiz-grid__elem
+                        input.checkbox.uptoayear-blushing(type='checkbox' name='blushing' value="сильно-краснел-при-плаче")
+                        label.uptoayear-blushing__label(for='blushing') сильно краснел при плаче
+                    .quiz-grid__elem
+                        input.checkbox.uptoayear-hypertonicicty(type='checkbox' name='hypertonicicty' value="гипертонус")
+                        label.uptoayear-hypertonicicty__label(for='hypertonicicty') гипертонус
+                    .quiz-grid__elem
+                        input.checkbox.uptoayear-violation(type='checkbox' name='violation' value="нарушения-режима-сна")
+                        label.uptoayear-violation__label(for='violation') нарушения режима сна
+                    .quiz-grid__elem
+                        input.checkbox.uptoayear-chin-tremor(type='checkbox' name='chin-tremor' value="тремор-подбородка")
+                        label.uptoayear-chin-tremor__label(for='chin-tremor') тремор подбородка
+                    .quiz-grid__elem
+                        input.checkbox.uptoayear-shudders(type='checkbox' name='shudders' value="вздрагивания")
+                        label.uptoayear-shudders__label(for='shudders') вздрагивания
+                    .quiz-grid__elem
+                        input.checkbox.uptoayear-hypotonus(type='checkbox' name='hypotonus' value="гипотонус")
+                        label.uptoayear-hypotonus__label(for='hypotonus') гипотонус
+                    .quiz-grid__elem
+                        input.checkbox.uptoayear-pulling(type='checkbox' name='pulling' value="оттягивание-головы-назад")
+                        label.uptoayear-pulling__label(for='pulling') оттягивание головы назад
+                    .quiz-grid__elem
+                        input.checkbox.uptoayear-screaming(type='checkbox' name='screaming' value="закатывался-при-плаче")
+                        label.uptoayear-screaming__label(for='screaming') закатывался при плаче
+                    .quiz-grid__elem
+                        input.checkbox.uptoayear-gi(type='checkbox' name='gi' value="функциональная-незрелость-ЖКТ")
+                        label.uptoayear-gi__label(for='gi') функциональная незрелость ЖКТ
+                    .quiz-grid__elem
+                        input.checkbox.uptoayear-colic(type='checkbox' name='colic' value="кишечная-колика")
+                        label.uptoayear-colic__label(for='colic') кишечная колика
+                    .quiz-grid__elem
+                        input.checkbox.uptoayear-regurgitation(type='checkbox' name='regurgitation' value="срыгивания")
+                        label.uptoayear-regurgitation__label(for='regurgitation') срыгивания
+                    .quiz-grid__elem
+                        input.checkbox.uptoayear-constipation(type='checkbox' name='constipation' value="запоры")
+                        label.uptoayear-constipation__label(for='constipation') запоры
+                    .quiz-grid__elem
+                        input.checkbox.uptoayear-nothing(type='checkbox' name='uptoayear-nothing' value="Ничего из перечисленного")
+                        label.uptoayear-nothing__label(for='uptoayear-nothing') ничего из перечисленного
+            input.uptoayear-readmore(type='text' name='uptoayear-readmore' placeholder='другое')
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+        .quiz__item
+            h1 Моторные функции. Часть 1
+            .row
+                .quiz-grid.quiz-grid--withoutannotation
+                    .quiz-grid__elem.quiz-grid__elem--num
+                        label.motor-functions-held__label(for='held') Держал голову с
+                        input.motor-functions-held(type="text" name='held' placeholder='мес')
+                    .quiz-grid__elem.quiz-grid__elem--num
+                        label.motor-functions-set__label(for='set') Самостоятельно садился
+                        input.motor-functions-set(type="text" name='set' placeholder='мес')
+                    .quiz-grid__elem.quiz-grid__elem--num
+                        label.motor-functions-turned-over__label(for='turned-over') Самостоятельно переворачивался
+                        input.motor-functions-turned-over(type="text" name='turned-over' placeholder='мес')
+                    .quiz-grid__elem.quiz-grid__elem--num
+                        label.motor-functions-grabbed-toys__label(for='grabbed-toys') Хватал игрушки с
+                        input.motor-functions-grabbed-toys(type="text" name='grabbed-toys' placeholder='мес')
+                    .quiz-grid__elem.quiz-grid__elem--num
+                        label.motor-functions-crowled-since__label(for='crowled-since') Ползал с
+                        input.motor-functions-crowled-since(type="text" name='crowled-since' placeholder='мес')
+
+            p <strong>Ползал:</strong>
+            .row
+                .quiz-grid.quiz-grid--withoutannotation
+                    .quiz-grid__elem.quiz-grid__elem--num
+                            input.motor-functions-crowled-quantity(type="radio" name='crowled-quantity' value="много")
+                            label.motor-functions-crowled-quantity__label(for='crowled-quantity') много
+                    .quiz-grid__elem.quiz-grid__elem--num
+                            input.motor-functions-crowled-quantity(type="radio" name='crowled-quantity' value="мало")
+                            label.motor-functions-crowled-quantity__label(for='crowled-quantity') мало
+                    .quiz-grid__elem.quiz-grid__elem--num
+                            input.motor-functions-crowled-quantity(type="radio" name='crowled-quantity' value="не-ползал-вообще")
+                            label.motor-functions-crowled-quantity__label(for='crowled-quantity') не ползал вообще
+
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+        .quiz__item
+            h1 Моторные функции. Часть 2
+            .row
+                .quiz-grid
+                    .quiz-grid__elem.quiz-grid__elem--num
+                        label.walking-since__label(for='walking-since') Самостоятельно ходить начал с
+                        input.walking-since(type="text" name='walking-since' placeholder='мес')
+            .row
+                .quiz-grid
+                    p.quiz-grid__annotation <strong>Особенности дебюта ходьбы:</strong>
+                    .quiz-grid__elem
+                        input.checkbox.debut-falling(type='checkbox' name='debut-falling' value="часто-падал")
+                        label.debut-falling__label(for='debut-falling') часто падал
+                    .quiz-grid__elem
+                        input.checkbox.debut-afraid-to-walk(type='checkbox' name='debut-afraid-to-walk' value="боялся-самостоятельно-ходить")
+                        label.debut-afraid-to-walk__label(for='debut-afraid-to-walk') боялся самостоятельно ходить
+                    .quiz-grid__elem
+                        input.checkbox.debut-slanted(type='checkbox' name='debut-slanted' value="косолапил")
+                        label.debut-slanted__label(for='debut-slanted') “косолапил”
+                    .quiz-grid__elem
+                        input.checkbox.debut-run(type='checkbox' name='debut-run' value="сразу-побежал")
+                        label.debut-run__label(for='debut-run') сразу побежал
+                    .quiz-grid__elem
+                        input.checkbox.debut-on-your-toes(type='checkbox' name='debut-on-your-toes' value="на-мысочках")
+                        label.debut-on-your-toes__label(for='debut-on-your-toes') на “мысочках”
+            textarea.debut-readmore(name='debut-readmore' placeholder='рассказать подробнее')
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+        .quiz__item
+            h1 Речевое развитие
+            .row
+                .quiz-grid.quiz-grid--withoutannotation
+                    .quiz-grid__elem.quiz-grid__elem--num
+                        label.speech-lepetus__label(for='speech-lepetus') Лепет с
+                        input.speech-lepetus(type="text" name='speech-lepetus' placeholder='мес')
+                    .quiz-grid__elem.quiz-grid__elem--num
+                        label.speech-words-from__label(for='speech-words-from') Слова с
+                        input.speech-words-from(type="text" name='speech-words-from' placeholder='мес')
+                    .quiz-grid__elem.quiz-grid__elem--num
+                        label.speech-phrases__label(for='speech-phrases') Фразы с
+                        input.speech-phrases(type="text" name='speech-phrases' placeholder='года')
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+        .quiz__item
+            h1 Ранний период, до 1 года. Часть 1
+            .row
+                .quiz-grid.quiz-grid--withoutannotation
+                    .quiz-grid__elem
+                        input.up-to-one-sars-ari(type='checkbox' name='up-to-one-sars-ari' value="ОРЗ-ОРВИ")
+                        label.up-to-one-sars-ari__label(for='up-to-one-sars-ari') ОРЗ / ОРВИ
+                    .quiz-grid__elem
+                        input.checkbox.up-to-one-otitis(type='checkbox' name='up-to-one-otitis' value="отит")
+                        label.up-to-one-otitis__label(for='up-to-one-otitis') отит
+                    .quiz-grid__elem
+                        input.checkbox.up-to-one-musculoskeletal-disorders(type='checkbox' name='up-to-one-musculoskeletal-disorders' value="нарушения- опорно-двигательного-аппарата")
+                        label.up-to-one-musculoskeletal-disorders__label(for='up-to-one-musculoskeletal-disorders') нарушения опорно-двигательного аппарата
+                    .quiz-grid__elem
+                        input.checkbox.up-to-one-chronic-diseases(type='checkbox' name='up-to-one-chronic-diseases' value="хронические-заболевания")
+                        label.up-to-one-chronic-diseases__label(for='up-to-one-chronic-diseases') хронические заболевания
+                    .quiz-grid__elem
+                        input.checkbox.up-to-one-head-injury(type='checkbox' name='up-to-one-head-injury' value="травмы-головы")
+                        label.up-to-one-head-injury__label(for='up-to-one-head-injury') травмы головы
+                    .quiz-grid__elem
+                        input.checkbox.up-to-one-general-anesthesia(type='checkbox' name='up-to-one-general-anesthesia' value="операции-под-общим-наркозом")
+                        label.up-to-one-general-anesthesia__label(for='up-to-one-general-anesthesia') операции под общим наркозом
+            textarea.up-to-one-readmore(name='up-to-one-readmore' placeholder='рассказать подробнее, уточнить периодичность')
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+        .quiz__item
+            h1 Ранний период, до 1 года. Часть 2
+            .row
+                label.up-to-one-drugs__label(for='up-to-one-drugs') Какие лекарственные препараты ребенок принимал до года:
+                textarea.up-to-one-drugs(name='up-to-one-drugs' placeholder='расскажите об этом' rows='3')
+            .row
+                label.up-to-one-leading-hand__label(for='up-to-one-leading-hand') Какой рукой предпочтительно манипулировал до года:
+                textarea.up-to-one-leading-hand(name='up-to-one-leading-hand' placeholder='расскажите об этом' rows='3')
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+        .quiz__item
+            h1 От года по настоящее время. Часть 1
+            .row
+                .quiz-grid
+                    p.quiz-grid__annotation <strong>Имели место:</strong>
+                    .quiz-grid__elem
+                        input.checkbox.to-date-logoneurosis(type='checkbox' name='to-date-logoneurosis' value="логоневроз")
+                        label.to-date-logoneurosis__label(for='to-date-logoneurosis') логоневроз
+                    .quiz-grid__elem
+                        input.checkbox.to-date-encopresis(type='checkbox' name='to-date-encopresis' value="энкопрез")
+                        label.to-date-encopresis__label(for='to-date-encopresis') энкопрез
+                    .quiz-grid__elem
+                        input.checkbox.to-date-vegetative-disorders(type='checkbox' name='to-date-vegetative-disorders' value="вегетативные-расстройства")
+                        label.to-date-vegetative-disorders__label(for='to-date-vegetative-disorders') вегетативные расстройства
+                    .quiz-grid__elem
+                        input.checkbox.to-date-enuresis(type='checkbox' name='to-date-enuresis' value="энурез")
+                        label.to-date-enuresis__label(for='to-date-enuresis') энурез
+                    .quiz-grid__elem
+                        input.checkbox.to-date-fears(type='checkbox' name='to-date-fears' value="страхи")
+                        label.to-date-fears__label(for='to-date-fears') страхи
+                    .quiz-grid__elem
+                        input.checkbox.to-date-fainting(type='checkbox' name='to-date-fainting' value="обмороки")
+                        label.to-date-fainting__label(for='to-date-fainting') обмороки
+                    .quiz-grid__elem
+                        input.checkbox.to-date-tics(type='checkbox' name='to-date-tics' value="тики")
+                        label.to-date-nothing__label(for='to-date-nothing') тики
+                    .quiz-grid__elem
+                        input.checkbox.to-date-nothing(type='checkbox' name='to-date-nothing' value="Ничего из перечисленного")
+                        label.to-date-nothing__label(for='to-date-nothing') ничего из перечисленного
+            textarea.to-date-readmore(name='to-date-readmore' placeholder='рассказать подробнее')
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+        .quiz__item
+            h1 От года по настоящее время. Часть 2
+            .row
+                .quiz-grid
+                    p.quiz-grid__annotation <strong>Наблюдался / наблюдается ли ребенок специалистом?</strong>
+                    .quiz-grid__elem
+                        input.supervision-speech-therapist(type='checkbox' name='supervision-speech-therapist' value="логопед")
+                        label.supervision-speech-therapist__label(for='supervision-speech-therapist') логопед
+                    .quiz-grid__elem
+                        input.checkbox.supervision-neurologist(type='checkbox' name='supervision-neurologist' value="невролог")
+                        label.supervision-neurologist__label(for='supervision-neurologist') невролог
+                    .quiz-grid__elem
+                        input.checkbox.supervision-psychiatrist(type='checkbox' name='supervision-psychiatrist' value="психиатр")
+                        label.supervision-psychiatrist__label(for='supervision-psychiatrist') психиатр
+            textarea.supervision-readmore(name='supervision-readmore' placeholder='кратко опишите причину обращения к специалисту')
+            .row
+                .quiz-grid
+                    p.quiz-grid__annotation <strong>Какой рукой предпочтительно манипулирует в настоящее время?</strong>
+                    .quiz-grid__elem
+                        input.lead-hand-now(type='radio' name='lead-hand-now' value="левой")
+                        label.lead-hand-now-left__label(for='lead-hand-now') левой
+                    .quiz-grid__elem
+                        input.lead-hand-now-(type='radio' name='lead-hand-now' value="правой")
+                        label.lead-hand-now-right__label(for='lead-hand-now') правой
+            .row
+                .quiz-grid
+                    p.quiz-grid__annotation <strong>Имело ли место переучивание на другую руку?</strong>
+                    .quiz-grid__elem
+                        input.lead-hand-now-left(type='radio' name='lead-hand-retraining' value='Да')
+                        label.lead-hand-retraining__label(for='lead-hand-retraining') да
+                    .quiz-grid__elem
+                        input.lead-hand-retraining(type='radio' name='lead-hand-retraining' value='Нет')
+                        label.lead-hand-retraining__label(for='lead-hand-retraining') нет
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+        .quiz__item
+            h1 От года по настоящее время. Часть 3
+            .row
+                div
+                    label.sleeping-habits__label(for='sleeping-habits') Особенности сна, засыпания:
+                    textarea.sleeping-habits(name='sleeping-habits' placeholder='расскажите об этом' rows='3')
+                div
+                    label.ending-of-breastfeeding__label(for='ending-of-breastfeeding') Грудное вскармливание завершено в возрасте
+                    textarea.ending-of-breastfeeding(name='ending-of-breastfeeding' placeholder='расскажите об этом' rows='3')
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+        .quiz__item
+            h1 От года по настоящее время. Часть 4
+            .row
+                div
+                    label.become-dry__label(for='become-dry') Самостоятельно садился на горшок с возраста
+                    textarea.become-dry(name='become-dry' placeholder='расскажите об этом' rows='3')
+                div
+                    label.teachers-complaints__label(for='teachers-complaints') Наблюдения учителя / воспитателя / педагога кружков
+                    textarea.teachers-complaints(name='teachers-complaints' placeholder='расскажите об этом' rows='3')
+                div
+                    label.relationships-with-others__label(for='relationships-with-others') Взаимоотношения с окружающими
+                    textarea.relationships-with-others(name='relationships-with-others' placeholder='расскажите об этом' rows='3')
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    a(href='#') Дальше
+        .quiz__item
+            h1 Есть ли что-то, что вам хотелось бы добавить?
+            .row
+                textarea.anything-else(name='anything-else' placeholder='Расскажите, что считаете нужным' rows='5')
+            .navigation
+                .navigation__prev
+                    a(href='#') Назад
+                .navigation__next
+                    input#submit.submit(type='submit' value='Отправить')
